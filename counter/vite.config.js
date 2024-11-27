@@ -20,8 +20,8 @@ export default defineConfig({
       },
       shared: {
         ...dependencies,
-        react: { singleton: true },
-        "react-dom": { singleton: true },
+        // react: { singleton: true },
+        // "react-dom": { singleton: true },
       },
     }),
   ],

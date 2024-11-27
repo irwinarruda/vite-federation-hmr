@@ -18,10 +18,10 @@ export function useCounter() {
 
 const CounterContext = createContext();
 
-export function CounterProvider({ children }) {
+export function CounterProvider({ App }) {
   return (
     <CounterContext.Provider value={useCounterContext()}>
-      {children}
+      <App />
     </CounterContext.Provider>
   );
 }

@@ -19,8 +19,8 @@ export default defineConfig({
       },
       shared: {
         ...dependencies,
-        react: { requiredVersion: dependencies["react"] },
-        "react-dom": { requiredVersion: dependencies["react-dom"] },
+        // react: { requiredVersion: dependencies["react"] },
+        // "react-dom": { requiredVersion: dependencies["react-dom"] },
       },
     }),
   ],
