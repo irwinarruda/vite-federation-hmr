@@ -1,6 +1,6 @@
-import { useState, useMemo, createContext, useContext } from "react";
+import { useState, useMemo } from "react";
 
-function useCounterContext() {
+export function useCounter() {
   const [count, setCount] = useState(0);
   return useMemo(
     () => ({
@@ -8,20 +8,6 @@ function useCounterContext() {
       increment: () => setCount((count) => count + 1),
       decrement: () => setCount((count) => count - 1),
     }),
-    [count]
-  );
-}
-
-export function useCounter() {
-  return useContext(CounterContext);
-}
-
-const CounterContext = createContext();
-
-export function CounterProvider({ App }) {
-  return (
-    <CounterContext.Provider value={useCounterContext()}>
-      <App />
-    </CounterContext.Provider>
+    [count],
   );
 }

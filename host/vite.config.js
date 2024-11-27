@@ -9,6 +9,7 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  base: "http://localhost:3000",
   plugins: [
     react(),
     federation({
@@ -19,8 +20,6 @@ export default defineConfig({
       },
       shared: {
         ...dependencies,
-        // react: { requiredVersion: dependencies["react"] },
-        // "react-dom": { requiredVersion: dependencies["react-dom"] },
       },
     }),
   ],

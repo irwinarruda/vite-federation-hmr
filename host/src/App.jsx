@@ -1,26 +1,13 @@
-import { CounterProvider } from "counter/Counter";
-import { Nested1Component } from "./Nested1Component";
+import { useNested } from "./useNested";
+import { NotReloadedWhenChanged } from "./NotReloadedWhenChanged";
 
-// function App() {
-//   return (
-//     <CounterProvider>
-//       <h1>Host</h1>
-//       <Nested1Component />
-//     </CounterProvider>
-//   );
-// }
-
-function Comp() {
+export function App() {
+  // The line below causes a problem with hot reload
+  useNested();
   return (
-    <>
-      <h1>Host</h1>
-      <Nested1Component />
-    </>
+    <div>
+      <h1>Hi</h1>
+      <NotReloadedWhenChanged />
+    </div>
   );
 }
-
-function App() {
-  return <CounterProvider App={Comp} />;
-}
-
-export default App;

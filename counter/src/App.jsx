@@ -1,5 +1,11 @@
-function App() {
-  return <h1>Counter</h1>;
-}
+import { useCounter } from "./Counter";
 
-export default App;
+export function App() {
+  const counter = useCounter();
+  return (
+    <>
+      <h1>Hello World</h1>
+      <button onClick={counter.increment}>Increment</button>
+    </>
+  );
+}
